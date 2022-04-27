@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/remove-element/solution/
 
 
-
+// Complexity O(1)
 /**
  * @param {number[]} nums
  * @param {number} val
