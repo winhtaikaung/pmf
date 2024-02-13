@@ -7,6 +7,7 @@ import pytest
 
 def length_of_longest_substring(s):
     # Solution function goes here
+    # Using Sliding Windows Approach
     kv = set()
     charlist= [x for x in s]
     l , res = 0,0
