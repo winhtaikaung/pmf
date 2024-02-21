@@ -7,6 +7,38 @@ import pytest
 
 def longest_palindrome(s):
     # Solution function goes here
+    n = len(s)
+    start = 0
+    end = 1
+ 
+    for i in range(n):
+        # Find the longest palindromic substring of even length
+        low,hi = i - 1,i
+        
+ 
+        while low >= 0 and hi < n and s[low] == s[hi]:
+            if hi - low + 1 > end:
+                start = low
+                end = hi - low + 1
+            low -= 1
+            hi += 1
+ 
+        # Find the longest palindromic substring of odd length
+        low = i - 1
+        hi = i + 1
+        
+        while low >= 0 and hi < n and s[low] == s[hi]:
+            
+            if hi - low + 1 > end:
+                start = low
+                end = hi - low + 1
+            low -= 1
+            hi += 1
+    
+
+
+
+    return s[start:start+end]
     pass
 
 @pytest.mark.parametrize("s, expected", [
